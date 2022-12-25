@@ -9,6 +9,11 @@ const pokeApi = {
     const url = `/pokemon?limit=${query.limit}&offset=${query.offset}`;
     return axiosClient.get(url);
   },
+  getPokemon(name: string): Promise<Pokemon> {
+    console.log(name)
+    const url = `/pokemon/${name}/`;
+    return axiosClient.get(url);
+  },
 
 //   getById(id: string): Promise<Student> {
 //     const url = `/students/${id}`;

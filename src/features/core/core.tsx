@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import InfoCardList from "../../components/infoCardList/infoCardList";
 import { coreState, coreActions } from "./coreSlice";
 
 function Core() {
@@ -10,10 +11,14 @@ function Core() {
 
   return (
     <Fragment>
+      
       <div>MainPage</div>
       <button
         onClick={() => {
           dispatch(coreActions.getPokemonList(0));
+          state.pokemons.forEach(element => {
+            console.log(element)
+          });
         }}
       >
         Test API
@@ -22,9 +27,7 @@ function Core() {
       {
         state.status == 'loading'
         ?<img src="https://media.giphy.com/media/Qrca6tBIdqXYXhnB4v/giphy.gif"></img>
-        :state.pokemons.map((pkm) => (
-            <p key={pkm.id}> {pkm.name}</p>
-        ))
+        :<InfoCardList Pokemons={state.pokemons}></InfoCardList>
       }
 
     </Fragment>
