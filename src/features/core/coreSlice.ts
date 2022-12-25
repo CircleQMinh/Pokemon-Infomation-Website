@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
+import SetPokemonInfo from '../../interface/form/SetPokemonInfo';
 import Pokemon from '../../interface/model/Pokemon';
 import BaseQuery from '../../interface/query/BaseQuery';
 import { BaseResponse } from '../../interface/response/BaseResponse';
@@ -11,7 +12,8 @@ export interface CoreState {
     value: number,
     pokemons : Pokemon[],
     status: 'idle' | 'loading' | 'failed',
-    query: BaseQuery
+    query: BaseQuery,
+    updateInfo : 'done' | 'inprogress'
   }
   
   const initialState: CoreState = {
@@ -21,7 +23,8 @@ export interface CoreState {
     query: {
         offset:0,
         limit:20
-    }
+    },
+    updateInfo:'inprogress'
   };
   export const coreSlice = createSlice({
     name: 'core',
@@ -38,6 +41,16 @@ export interface CoreState {
       },
       getPokemonListFailed(state) {
         state.status = 'failed'
+      },
+      setPokemonInfo(state, action: PayloadAction<SetPokemonInfo>) {
+        // console.log( state.pokemons[action.payload.index])
+        // console.log(action.payload.index)
+        // console.log(action.payload.pokemon)
+        state.pokemons[action.payload.index] = action.payload.pokemon
+        
+      },
+      startUpdateInfo(state) {
+        state.updateInfo = 'inprogress'
       },
     },
 
