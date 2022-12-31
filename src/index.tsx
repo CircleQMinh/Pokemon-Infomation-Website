@@ -5,6 +5,9 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import GlobalHeader from './components/global/GlobalHeader';
+import GlobalFooter from './components/global/GlobalFooter';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -12,7 +15,11 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <GlobalHeader></GlobalHeader>
+        <App />
+        <GlobalFooter></GlobalFooter>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

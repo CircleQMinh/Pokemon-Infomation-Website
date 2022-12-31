@@ -10,7 +10,7 @@ const pokeApi = {
     return axiosClient.get(url);
   },
   getPokemon(name: string): Promise<Pokemon> {
-    console.log(name)
+    // console.log(name)
     const url = `/pokemon/${name}/`;
     return axiosClient.get(url);
   },
