@@ -8,13 +8,18 @@ type InfoCardListProps = {
 function InfoCardList(props: InfoCardListProps) {
   const pokemons = props.Pokemons;
   return (
-    <div className="infocard-list infocard-list-pkmn-lg">
+    <div className="container">
+      <div className="row">
+      <div className="infocard-list infocard-list-pkmn-lg">
         {
             pokemons.map((pkm)=>(
                 <InfoCard Pokemon={pkm} key={pkm.name}></InfoCard>
             ))
         }
     </div>
+      </div>
+    </div>
+
   );
 }
 

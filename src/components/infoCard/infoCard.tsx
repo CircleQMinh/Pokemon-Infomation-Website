@@ -28,13 +28,11 @@ function InfoCard(props: InfoCardProps) {
           {pokemon.name}
         </a>
         <br></br>
-        <small>
+        <small className="d-flex justify-content-evenly p-1">
           {pokemon.types != null && (
             <>
-              {pokemon.types.map((t) => (
-                <a href={`/pokedex/${t.type.name}.html`}>
-                  <img src={GetPokemonTypeLogo(t.type.name)} />
-                </a>
+              {pokemon.types.map((t,index) => (
+                <a href="/type/fairy" className={`type-icon type-${t.type.name} m-1`} key={t.type+index.toString()}>{t.type.name}</a>
               ))}
             </>
           )}

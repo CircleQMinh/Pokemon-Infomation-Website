@@ -67,3 +67,43 @@ small{font-size:.875rem;}
 .infocard-lg-img,.infocard-lg-data{display:block;}
 .ent-name{font-size:1rem;font-weight:bold;text-transform: capitalize;}
 .itype{color:#737373;}
+
+.type-normal{background-color:#aa9 !important;}
+.type-fire{background-color:#f42 !important;}
+.type-water{background-color:#39f !important;}
+.type-electric{background-color:#fc3 !important;}
+.type-grass{background-color:#7c5 !important;}
+.type-ice{background-color:#6cf !important;}
+.type-fighting{background-color:#b54 !important;}
+.type-poison{background-color:#a59 !important;}
+.type-ground{background-color:#db5 !important;}
+.type-flying{background-color:#89f !important;}
+.type-psychic{background-color:#f59 !important;}
+.type-bug{background-color:#ab2 !important;}
+.type-rock{background-color:#ba6 !important;}
+.type-ghost{background-color:#66b !important;}
+.type-dragon{background-color:#76e !important;}
+.type-dark{background-color:#754 !important;}
+.type-steel{background-color:#aab !important;}
+.type-fairy{background-color:#e9e !important;}
+
+
+/*! CSS Used from: https://pokemondb.net/static/css/pokemondb-f77076084e.css */
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+a{color:#2769be;text-decoration:none;transition:color .2s,background-color .2s;}
+a:hover,a:active,a:focus{color:#a42121;text-decoration:underline;outline:0;}
+:target{background-color:#f0f0f0;}
+::-webkit-input-placeholder{color:#a3a3a3;font:inherit;line-height:2;font-size:.875rem;opacity:1;}
+:-ms-input-placeholder{color:#a3a3a3;font:inherit;line-height:2;font-size:.875rem;opacity:1;}
+::placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+::-moz-placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+@media (min-width: 620px)and (max-width: 899px){
+::-moz-placeholder{line-height:2.25;}
+}
+.type-icon{display:inline-block;width:66px;margin-bottom:4px;background:#dbdbdb;border:1px solid #a3a3a3;border-radius:4px;border:1px solid rgba(0,0,0,.2);color:#fff;font-size:.75rem;font-weight:normal;line-height:1.5rem;text-align:center;text-shadow:1px 1px 2px rgba(0,0,0,.7);text-transform:uppercase;transition:opacity .4s;}
+.type-icon:hover,.type-icon:active,.type-icon:focus{color:#fff;text-decoration:none;}
+.type-icon:link:hover,.type-icon:link:active,.type-icon:link:focus{opacity:.85;}
+
+.infocard-lg-data{
+    min-height: 100px;
+}

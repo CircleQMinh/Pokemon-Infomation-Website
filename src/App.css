@@ -37,3 +37,14 @@
     transform: translateY(0px);
   }
 }
+
+.nav-link i{
+  margin-right: 10px;
+}
+body {
+  background-color: #d1e5d9!important;
+  background-image: url(https://ahost2.bulbagarden.net/content/bulbagarden/images/bg-green-2x-optim.png),linear-gradient(180deg,#e5f1ec 0%,#e5f1ec 322px,#d1e5d9 322px)!important;
+  background-repeat: no-repeat!important;
+  background-position: center 83px,0 0!important;
+  background-size: 2250px,auto!important;
+}
