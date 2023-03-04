@@ -1,4 +1,6 @@
+import { EvolutionInfo } from '../interface/model/EvolutionChain';
 import Pokemon from '../interface/model/Pokemon';
+import Species from '../interface/model/Species';
 import BaseQuery from '../interface/query/BaseQuery';
 import { BaseResponse } from '../interface/response/BaseResponse';
 import GetPokemonListResponse from '../interface/response/GetPokemonListResponse';
@@ -12,6 +14,18 @@ const pokeApi = {
   getPokemon(name: string): Promise<Pokemon> {
     // console.log(name)
     const url = `/pokemon/${name}/`;
+    return axiosClient.get(url);
+  },
+  
+  getSpecies(name: string): Promise<Species> {
+    // console.log(name)
+    const url = `/pokemon-species/${name}/`;
+    return axiosClient.get(url);
+  },
+
+  getEvolutionChain(name: string): Promise<EvolutionInfo> {
+    // console.log(name)
+    const url = `/evolution-chain/${name}/`;
     return axiosClient.get(url);
   },
 

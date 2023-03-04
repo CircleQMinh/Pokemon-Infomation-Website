@@ -22,19 +22,19 @@ function GlobalHeader() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-              <a className="nav-link" href="list">
+              <a className="nav-link" href="/list">
               <i className="fa-regular fa-rectangle-list"></i>Pokemon List
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="search">
+              <a className="nav-link" href="/search">
               <i className="fa-solid fa-magnifying-glass"></i>Search
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="data"
+                href="/data"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -44,29 +44,29 @@ function GlobalHeader() {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a className="dropdown-item" href="data">
+                  <a className="dropdown-item" href="/data/types">
                     Types
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="data">
+                  <a className="dropdown-item" href="/data/moves">
                    
                    Moves
                   </a>
                 </li>
                 <li className="dropdown-divider"></li>
                 <li>
-                  <a className="dropdown-item" href="data">
+                  <a className="dropdown-item" href="/data/abilities">
                    Abilities
                   </a>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link"  href="battle"><i className="fa-brands fa-battle-net"></i>Random PKM Battle</a>
+              <a className="nav-link"  href="/battle"><i className="fa-brands fa-battle-net"></i>Random PKM Battle</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link"  href="guess"><i className="fa-solid fa-circle-question"></i>PKM Guessing Game</a>
+              <a className="nav-link"  href="/guess"><i className="fa-solid fa-circle-question"></i>PKM Guessing Game</a>
             </li>
           </ul>
           {/* <form className="d-flex">

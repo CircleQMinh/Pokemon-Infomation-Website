@@ -1,0 +1,71 @@
+/*! CSS Used from: https://pokemondb.net/static/css/pokemondb-f77076084e.css */
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+nav{display:block;}
+a{color:#2769be;text-decoration:none;transition:color .2s,background-color .2s;}
+a:hover,a:active,a:focus{color:#a42121;text-decoration:underline;outline:0;}
+:target{background-color:#f0f0f0;}
+.component{margin-bottom:1rem;}
+::-webkit-input-placeholder{color:#a3a3a3;font:inherit;line-height:2;font-size:.875rem;opacity:1;}
+:-ms-input-placeholder{color:#a3a3a3;font:inherit;line-height:2;font-size:.875rem;opacity:1;}
+::placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+::-moz-placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+@media (min-width: 620px)and (max-width: 899px){
+::-moz-placeholder{line-height:2.25;}
+}
+.entity-nav{overflow:hidden;text-align:center;}
+.entity-nav-next:hover,.entity-nav-prev:hover{background-color:#eeeeec;color:#000;text-decoration:none;}
+.entity-nav-prev{float:left;padding:2px 5px;border-radius:30px 0 0 30px;}
+.entity-nav-prev::before{content:"◂ ";}
+.entity-nav-next{float:right;padding:2px 5px;border-radius:0 30px 30px 0;}
+.entity-nav-next::after{content:" ▸";}
+
+h1 {
+    text-align: center;
+    font-family: monospace;
+    text-transform: capitalize;
+    padding: 10px 0;
+}
+
+/*! CSS Used from: https://pokemondb.net/static/css/pokemondb-0075887279.css */
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+table{margin:0 auto 1rem;border-collapse:collapse;border-spacing:0;}
+th,td{padding:4px 10px;}
+th{font-weight:bold;}
+:target{background-color:#f0f0f0;}
+.resp-scroll{margin-bottom:1rem;}
+@media (max-width: 1219px){
+.resp-scroll{overflow-x:auto;}
+}
+.resp-scroll>:last-child{margin-bottom:0;}
+::placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+.vitals-table{width:100%;margin-top:10px}
+.vitals-table th,.vitals-table td{border-width:1px 0;border-style:solid;border-color:#f0f0f0;background-color:#fff;}
+.vitals-table th{color:#737373;font-size:.875rem;font-weight:normal;text-align:right;}
+.cell-med-text{min-width:125px;}
+@media (min-width: 620px){
+.vitals-table th{width:1px;white-space:nowrap;}
+}
+.igame.shield{color:#c03028;}
+.igame.sword{color:#5d81d6;}
+.igame.sun,.igame.ultra-sun{color:#db8624;}
+.igame.moon,.igame.ultra-moon{color:#7038f8;}
+.igame{
+    text-transform:capitalize;
+    display:block;
+
+
+}
+.width100px{
+    width: 100px;
+}
+.card_evo{
+  
+}
+.border-none{
+    border:0
+}
+.span_evole_info{
+    margin: 0;
+    padding: 0;
+    display: list-item;
+}
