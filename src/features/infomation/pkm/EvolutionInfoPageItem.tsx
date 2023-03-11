@@ -4,37 +4,34 @@ import {
   GetPKMImageURL,
   TranformItemName,
 } from "../../../common/function";
-import { EvolvesTo } from "../../../interface/model/EvolutionChain";
+import { EvolutionDetail, EvolvesTo } from "../../../interface/model/EvolutionChain";
 
 function EvolutionInfoPageItem(props: EvolvesTo) {
   const evolutionInfo = props;
   const species = props.species;
-  var details =
-    props.evolution_details.length == 1
-      ? props.evolution_details[0]
-      : props.evolution_details[props.evolution_details.length - 1];
+  var details = props.evolution_details
+    // props.evolution_details.length == 1
+    //   ? props.evolution_details[0]
+    //   : props.evolution_details[props.evolution_details.length - 1];
 
+    
   return (
     <Fragment>
-      <div className="col-6">
+      <div className="col-12">
         <div className="container d-flex justify-content-center align-items-center text-center">
-          <div className="col-6">
+          <div className="col-6 mr-2">
             <div className="card  border-none d-flex flex-column justify-content-center align-items-center text-center">
               <i className="fa-solid fa-arrow-right"></i>
-              {Object.entries(details).map((e) => {
-                const [key, value] = e;
-                // console.log([key, value])
-                return (
-                  (value!=null && value!='') && (
-                    <span key={key} className="">
-                      {GetEvoleConditionElement(key, value)}
-                    </span>
-                  )
-                );
-              })}
+              <>
+              {
+                details.map((detail,i)=>{
+                  return CreateEvolutionDetailChild(detail,i)
+                })
+              }
+            </>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-8">
             <div className="card d-flex justify-conten-center align-items-center border-none">
               <img
                 src={GetPKMImageURL(species.url!)}
@@ -52,20 +49,11 @@ function EvolutionInfoPageItem(props: EvolvesTo) {
           </div>
         </div>
       </div>
-      <div className="col-6">
-        {evolutionInfo.evolves_to.map((e) => (
-          <EvolutionInfoPageItem
-            {...e}
-            key={e.species.name}
-          ></EvolutionInfoPageItem>
-        ))}
-      </div>
     </Fragment>
   );
 }
 
 function GetEvoleConditionElement(key: string, value: any) {
-  // console.log([key, value])
   switch (key) {
     case "min_level":
       return (
@@ -138,7 +126,7 @@ function GetEvoleConditionElement(key: string, value: any) {
       return (
         <p key={key} className="text-capitalize">
           {" "}
-          High Friendship
+          High Affection
         </p>
       );
     case "time_of_day":
@@ -169,6 +157,13 @@ function GetEvoleConditionElement(key: string, value: any) {
           </p>
         );
       }
+      // if(value.name == "level-up"){
+      //   return (
+      //     <p key={key} className="text-capitalize">
+      //       Level up
+      //     </p>
+      //   );
+      // }
       return "";
     case "trade_species":
       return (
@@ -233,5 +228,30 @@ function GetEvoleConditionElement(key: string, value: any) {
     default:
       return <p>{key}-???</p>;
   }
+}
+
+function CreateEvolutionDetailChild(detail:EvolutionDetail,index:number){
+  var count = 0;
+  var values:any[] = Object.values(detail)
+  values.forEach((value)=>{
+    if(value){
+      count++
+    }
+  })
+  return (
+  <Fragment key={index}>
+  {index>0&&count>1&&(<hr className="seperate_hr_condition"/>)}
+    {Object.entries(detail).map((e) => {
+      const [key, value] = e;
+      return (
+        (value!=null && value!='') && (
+          <span key={key} className="">
+            {GetEvoleConditionElement(key, value)}
+          </span>
+        )
+        );
+    })}
+  </Fragment>
+  )
 }
 export default EvolutionInfoPageItem;

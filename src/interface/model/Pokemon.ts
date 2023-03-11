@@ -12,4 +12,11 @@ export default interface Pokemon{
     weight:number,
     types:PokemonType[],
     species: BasicModel,
+
+    stats:PokemonStat[]
+}
+export interface PokemonStat{
+    base_stat:number,
+    effort:number,
+    stat:BasicModel
 }

@@ -181,3 +181,12 @@ export const PokemonShape = [
         imgUrl: "https://static.wikia.nocookie.net/pokemon/images/0/06/Shape14.png/revision/latest/scale-to-width-down/40?cb=20210318214421"
     },
 ]
+
+export const PokemonHighestStat={
+    HP:255,
+    Atk:190,
+    Def:250,
+    SAtk:194,
+    SDef:250,
+    Spd:200
+}
