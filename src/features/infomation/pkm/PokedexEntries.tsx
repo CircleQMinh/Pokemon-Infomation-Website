@@ -46,15 +46,15 @@ function PokedexEntries(props: {
  
   return (
     <Fragment>
-      <div className="resp-scroll">
-        <table className="vitals-table" id="pokedex_entries">
+      <div className="container-fluid p-3">
+        <table className="table table-secondary" id="pokedex_entries">
           <tbody id="pokedex_entries_body">
             {flavorText.map((e, i) => (
               <tr key={i}>
                 <th>
-                  <span className="igame blue">{e.version}</span>
+                  <span className="text-capitalize">{e.version}</span>
                 </th>
-                <td className="cell-med-text">
+                <td className="">
                     {e.text}
                 </td>
               </tr>
@@ -78,7 +78,7 @@ function mergeCells() {
           lastCounter++;
           dbRows[lastRow].cells[0].rowSpan = lastCounter;
           if(dbRows[i].cells[0].innerHTML!=""){
-            dbRows[lastRow].cells[0].innerHTML += `\r${dbRows[i].cells[0].innerHTML}`;
+            dbRows[lastRow].cells[0].innerHTML += `   /   ${dbRows[i].cells[0].innerHTML}`;
           }
           dbRows[i].cells[0].innerHTML=""
           dbRows[i].cells[0].style.display = "none";

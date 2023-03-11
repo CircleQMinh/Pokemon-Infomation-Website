@@ -38,13 +38,7 @@ th{font-weight:bold;}
 }
 .resp-scroll>:last-child{margin-bottom:0;}
 ::placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
-.vitals-table{width:100%;margin-top:10px}
-.vitals-table th,.vitals-table td{border-width:1px 0;border-style:solid;border-color:#f0f0f0;background-color:#fff;}
-.vitals-table th{color:#737373;font-size:.875rem;font-weight:normal;text-align:right;}
-.cell-med-text{min-width:125px;}
-@media (min-width: 620px){
-.vitals-table th{width:1px;white-space:nowrap;}
-}
+
 .igame.shield{color:#c03028;}
 .igame.sword{color:#5d81d6;}
 .igame.sun,.igame.ultra-sun{color:#db8624;}
@@ -68,4 +62,18 @@ th{font-weight:bold;}
     margin: 0;
     padding: 0;
     display: list-item;
+}
+.seperate_hr{
+    width: 100%;
+    color: #1f9f10;
+    height: 10px;
+    font-weight: bold;
+    background-color: #1f9f10;
+}
+.seperate_hr_condition{
+    width: 100%;
+    color: #6e491e;
+    height: 2px;
+    font-weight: bold;
+    background-color: #6e491e;
 }

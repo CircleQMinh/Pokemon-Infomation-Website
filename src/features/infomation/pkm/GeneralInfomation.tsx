@@ -7,6 +7,7 @@ import Pokemon from "../../../interface/model/Pokemon";
 import Species from "../../../interface/model/Species";
 import EvolutionInfoPage from "./EvolutionInfoPage";
 import PokedexEntries from "./PokedexEntries";
+import PokemonStatsPage from "./PokemonStatsPage";
 
 function GeneralInfomation(props: {
   Pokemon: Pokemon | undefined;
@@ -17,7 +18,7 @@ function GeneralInfomation(props: {
   const species = props.Species;
   const evolutionInfo = props.EvolutionInfo;
 
-  const ListOfTab = ["Pokedex Entries","Evolution","New"]
+  const ListOfTab = ["Stats","Pokedex Entries","Evolution","Moves","Sprites"]
 
 
   return (
@@ -32,9 +33,11 @@ function GeneralInfomation(props: {
         <div className="tab-content" id="myTabContent">
         {ListOfTab.map((e,i)=>(
             <EntriesContent key={e} content={
-            i==0?<PokedexEntries Pokemon={pokemon} Species={species}></PokedexEntries>:
-            i==1?<EvolutionInfoPage Pokemon={pokemon} Species={species} EvolutionInfo={evolutionInfo} ></EvolutionInfoPage>:
-            i==2?<p>{i}</p>:
+            i==0?<PokemonStatsPage Pokemon={pokemon}></PokemonStatsPage>:  
+            i==1?<PokedexEntries Pokemon={pokemon} Species={species}></PokedexEntries>:
+            i==2?<EvolutionInfoPage Pokemon={pokemon} Species={species} EvolutionInfo={evolutionInfo} ></EvolutionInfoPage>:
+            i==3?<p>Moves</p>:
+            i==4?<p>Sprites</p>:  
             "" }
             isActive={i==0} id={e}></EntriesContent>
           ))}

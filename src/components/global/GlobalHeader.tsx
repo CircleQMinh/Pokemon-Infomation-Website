@@ -4,7 +4,7 @@ function GlobalHeader() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="home">
+        <a className="navbar-brand" href="/home">
         <img src="/static/img/logo.jpg" alt="" width="30" height="24" className="d-inline-block align-text-top"/>
           Circle's PIW
         </a>

@@ -39,7 +39,7 @@ function QuickSummary(props: {
         <div className="row">
           <div className="col col-md-6 col-lg-6 text-center">
             <p>
-              <a rel="lightbox" data-title="Bulbasaur official artwork">
+              <a rel="lightbox" data-title=" official artwork">
                 <picture>
                   <img
                     src={`https://www.serebii.net/pokemon/art/${GetPaddedPokemonId(
@@ -58,7 +58,7 @@ function QuickSummary(props: {
           </div>
           <div className="col col-md-6 col-lg-6">
             <h2>Pokédex data</h2>
-            <table className="vitals-table table">
+            <table className="vitals-table table table-primary">
               <tbody>
                 <tr>
                   <th>National №</th>
