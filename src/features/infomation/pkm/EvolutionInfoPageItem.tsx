@@ -13,8 +13,6 @@ function EvolutionInfoPageItem(props: EvolvesTo) {
     // props.evolution_details.length == 1
     //   ? props.evolution_details[0]
     //   : props.evolution_details[props.evolution_details.length - 1];
-
-    
   return (
     <Fragment>
       <div className="col-12">

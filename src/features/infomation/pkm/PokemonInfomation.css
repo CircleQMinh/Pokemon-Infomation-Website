@@ -77,3 +77,94 @@ th{font-weight:bold;}
     font-weight: bold;
     background-color: #6e491e;
 }
+
+/*! CSS Used from: https://pokemondb.net/static/css/pokemondb-0075887279.css */
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+table{margin:0 auto 1rem;border-collapse:collapse;border-spacing:0;}
+th,td{padding:4px 10px;}
+a{color:#2769be;text-decoration:none;transition:color .2s,background-color .2s;}
+a:hover,a:active,a:focus{color:#a42121;text-decoration:underline;outline:0;}
+th{font-weight:bold;}
+:target{background-color:#f0f0f0;}
+.grid-col>:last-child{margin-bottom:0;}
+.resp-scroll{margin-bottom:1rem;}
+@media (max-width: 1219px){
+.resp-scroll{overflow-x:auto;}
+}
+.resp-scroll>:last-child{margin-bottom:0;}
+.text-center{text-align:center;}
+::placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+.type-icon{display:inline-block;width:66px;margin-bottom:4px;background:#dbdbdb;border:1px solid #a3a3a3;border-radius:4px;border:1px solid rgba(0,0,0,.2);color:#fff;font-size:.75rem;font-weight:normal;line-height:1.5rem;text-align:center;text-shadow:1px 1px 2px rgba(0,0,0,.7);text-transform:uppercase;transition:opacity .4s;}
+.type-icon:hover,.type-icon:active,.type-icon:focus{color:#fff;text-decoration:none;}
+.type-icon:link:hover,.type-icon:link:active,.type-icon:link:focus{opacity:.85;}
+.type-normal{background-color:#aa9;}
+.type-fire{background-color:#f42;}
+.type-water{background-color:#39f;}
+.type-electric{background-color:#fc3;}
+.type-grass{background-color:#7c5;}
+.type-ice{background-color:#6cf;}
+.type-fighting{background-color:#b54;}
+.type-poison{background-color:#a59;}
+.type-ground{background-color:#db5;}
+.type-flying{background-color:#89f;}
+.type-psychic{background-color:#f59;}
+.type-bug{background-color:#ab2;}
+.type-rock{background-color:#ba6;}
+.type-ghost{background-color:#66b;}
+.type-dragon{background-color:#76e;}
+.type-dark{background-color:#754;}
+.type-steel{background-color:#aab;}
+.type-fairy{background-color:#e9e;}
+/*! CSS Used from: https://pokemondb.net/static/css/type-chart-76998cbd3d.css */
+.type-table th,.type-table td{padding:0;border:1px solid #f0f0f0;}
+.type-cell{display:block;width:66px;height:28px;font-size:.625rem;margin-bottom:0;line-height:26px;}
+.type-abbr{width:28px;}
+.type-fx-cell{color:#ffdd57;font-size:.625rem;width:28px;height:28px;line-height:26px;text-align:center;}
+
+@media (min-width: 900px){
+.type-cell,.type-fx-cell{height:36px;font-size:.75rem;line-height:34px;}
+.type-abbr,.type-fx-cell{width:36px;}
+.type-fx-cell{font-size:.75rem;}
+.type-fx-50{font-size:.875rem;}
+}
+.type-table-pokedex{display:inline-block;margin:0 0 0 -1px;}
+
+/*! CSS Used from: https://pokemondb.net/static/css/pokemondb-0075887279.css */
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+td{padding:4px 10px;}
+:target{background-color:#f0f0f0;}
+::placeholder{color:#a3a3a3;font:inherit;line-height:1.5;font-size:.875rem;opacity:1;}
+/*! CSS Used from: https://pokemondb.net/static/css/type-chart-76998cbd3d.css */
+.type-table td{padding:0;border:1px solid #f0f0f0;}
+.type-fx-cell{color:black;font-size:.625rem;width:28px;height:28px;line-height:26px;text-align:center;}
+
+@media (min-width: 900px){
+.type-fx-cell{height:36px;font-size:.75rem;line-height:34px;}
+.type-fx-cell{width:36px;}
+.type-fx-cell{font-size:.75rem;}
+
+}
+
+.bg_neutral{
+    background-color:wheat ;
+}
+.bg_resist{
+    background-color: yellow;
+}
+.bg_immune{
+    background-color:chartreuse ;
+}
+.bg_effective{
+    background-color: red;
+}
+.img-sprite-v16{
+    width: 200px;
+}
+.empty_img{
+    height: 224px;
+    padding-top: 100px;
+}
+.movepool_overflow{
+    max-height: 300px;
+    overflow: auto;
+}

@@ -46,7 +46,8 @@ function PokedexEntries(props: {
  
   return (
     <Fragment>
-      <div className="container-fluid p-3">
+      <div className="container-fluid mt-3">
+        <hr></hr>
         <table className="table table-secondary" id="pokedex_entries">
           <tbody id="pokedex_entries_body">
             {flavorText.map((e, i) => (
@@ -61,6 +62,7 @@ function PokedexEntries(props: {
             ))}
           </tbody>
         </table>
+        <hr></hr>
       </div>
     </Fragment>
   );

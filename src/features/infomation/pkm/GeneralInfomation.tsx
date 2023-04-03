@@ -6,6 +6,8 @@ import { EvolutionInfo } from "../../../interface/model/EvolutionChain";
 import Pokemon from "../../../interface/model/Pokemon";
 import Species from "../../../interface/model/Species";
 import EvolutionInfoPage from "./EvolutionInfoPage";
+import PKMMovePage from "./PKMMovePage";
+import PKMSpritesPage from "./PKMSpritesPage";
 import PokedexEntries from "./PokedexEntries";
 import PokemonStatsPage from "./PokemonStatsPage";
 
@@ -24,7 +26,7 @@ function GeneralInfomation(props: {
   return (
     <Fragment>
       <div className="row">
-        <ul className="nav nav-pills pill-1" id="myTab" role="tablist">
+        <ul className="nav nav-pills pill-1 ms-3" id="myTab" role="tablist">
           {ListOfTab.map((e,i)=>(
             <li key={e}><EntriesButton name={e} isActive={i==0} ></EntriesButton></li>
           ))}
@@ -36,8 +38,8 @@ function GeneralInfomation(props: {
             i==0?<PokemonStatsPage Pokemon={pokemon}></PokemonStatsPage>:  
             i==1?<PokedexEntries Pokemon={pokemon} Species={species}></PokedexEntries>:
             i==2?<EvolutionInfoPage Pokemon={pokemon} Species={species} EvolutionInfo={evolutionInfo} ></EvolutionInfoPage>:
-            i==3?<p>Moves</p>:
-            i==4?<p>Sprites</p>:  
+            i==3?<PKMMovePage Pokemon={pokemon} ></PKMMovePage>:
+            i==4?<PKMSpritesPage Pokemon={pokemon} ></PKMSpritesPage>:  
             "" }
             isActive={i==0} id={e}></EntriesContent>
           ))}
