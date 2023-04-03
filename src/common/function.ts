@@ -1,3 +1,5 @@
+import { pokemon_types, damage_array } from "./contant";
+
 export function GetPokemonSprites(name: string) {
   return `https://img.pokemondb.net/sprites/bank/normal/${name}.png`;
 }
@@ -54,3 +56,58 @@ export function ConvertToGenerationString(url: string) {
   }
 }
 export const groupByKey = (list:any[], key:any) => list.reduce((hash, obj) => ({...hash, [obj[key]]:( hash[obj[key]] || [] ).concat(obj)}), {})
+
+export function GetDamageMultiplier(attackType:string,types:string[]){
+  var result:number = 1;
+  types.forEach(type => {
+      const attType = pokemon_types.findIndex(q=>q == attackType);
+      const defType = pokemon_types.findIndex(q=>q == type);
+      result = result *  damage_array[attType][defType]
+  });
+  return result
+}
+
+export function GetTypeEffectiveNumberAsString(num:number){
+  
+    if(num>=1 || num == 0){
+      return "x"+num.toString();
+    }
+    if(num===0.5){
+      return "1/2"
+    }
+    if(num===0.25){
+      return "1/4"
+    }
+}
+
+export function GetTypeEffectiveHoverLable(atk:string,defs:string[],num:number){
+    var defType = ""
+   defs.forEach(type => {
+      defType+=type
+      defType+="-"
+   });
+   defType =  defType.substring(0,defType.length-1)
+    if(num === 0){
+      return `${atk} → ${defType} = Immune`
+    }
+    if(num === 0.25 || num === 0.5){
+      return `${atk} → ${defType} = Not very effectiveness`
+    }
+    if(num === 2 || num === 4){
+      return `${atk} → ${defType} = Super effectiveness`
+    }
+    return `${atk} → ${defType} = Normal effectiveness`
+}
+export function capitalizeFirstLetter(string:string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export function tranformStringDash(string:string) {
+  string = string.replaceAll("-"," ")
+  return string
+}
+
+export const calculatePagesCount = (pageSize: number, totalCount: number) => {
+  // we suppose that if we have 0 items we want 1 empty page
+  return totalCount < pageSize ? 1 : Math.ceil(totalCount / pageSize);
+};

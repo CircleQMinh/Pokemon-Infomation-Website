@@ -39,7 +39,8 @@ function EvolutionInfoPage(props: {
   return (
     <Fragment>
       {pokemon && species && evolutionInfo ? (
-        <div className="container">
+        <div className="container-fluid mt-3">
+          <hr></hr>
           <div className="row bg-white d-flex justify-content-center align-items-center mt-2 pt-2">
             <div className="col-2">
               <div className="card d-flex justify-content-center align-items-center border-none">

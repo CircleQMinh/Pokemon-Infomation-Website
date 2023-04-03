@@ -42,9 +42,11 @@ function PokemonInfomation() {
   return (
     <Fragment>
       {pokemon && (
-        <div className="container">
+        <div className="container-fluid">
           <PKMHeader {...pokemon}></PKMHeader>
+          <hr></hr>
           <QuickSummary {...modelQuickSummary}></QuickSummary>
+          <hr></hr>
           <GeneralInfomation {...modelGeneralInfo}></GeneralInfomation>
         </div>
       )}
