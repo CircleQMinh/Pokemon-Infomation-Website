@@ -5,6 +5,7 @@ import Pokemon from '../../interface/model/Pokemon';
 import BaseQuery from '../../interface/query/BaseQuery';
 import { BaseResponse } from '../../interface/response/BaseResponse';
 import GetPokemonListResponse from '../../interface/response/GetPokemonListResponse';
+import GetPokemonSearchListResponse from '../../interface/response/GetPokemonSearchListResponse';
 
 // import { fetchCount } from './counterAPI';
 
@@ -13,7 +14,8 @@ export interface SearchState {
     pokemons : Pokemon[],
     status: 'idle' | 'loading' | 'failed',
     query: BaseQuery,
-    updateInfo : 'done' | 'inprogress'
+    updateInfo : 'done' | 'inprogress',
+    pokemonSearchList : string[]
   }
   
   const initialState: SearchState = {
@@ -24,7 +26,8 @@ export interface SearchState {
         offset:0,
         limit:20
     },
-    updateInfo:'inprogress'
+    updateInfo:'inprogress',
+    pokemonSearchList:[]
   };
   export const searchSlice = createSlice({
     name: 'search',
@@ -58,6 +61,24 @@ export interface SearchState {
       startUpdateInfo(state) {
         state.updateInfo = 'inprogress'
       },
+
+      getPokemonSearchList(state){
+        state.status = 'loading'
+      },
+      getPokemonSearchListSuccess(state, action: PayloadAction<GetPokemonSearchListResponse>) {
+        var temp = [...state.pokemonSearchList]
+        action.payload.results.forEach(rs => {
+          if(!temp.some(q=>q==rs.name)){
+            temp.push(rs.name)
+          }
+        });
+        state.pokemonSearchList = temp;
+        state.status = 'idle'
+      },
+      getPokemonSearchListFailed(state) {
+        state.status = 'failed'
+      },
+
     },
 
   });
