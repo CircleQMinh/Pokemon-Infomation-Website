@@ -23,18 +23,13 @@ function GlobalHeader() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
               <a className="nav-link" href="/list">
+              <i className="fa-solid fa-magnifying-glass"></i>
               <i className="fa-regular fa-rectangle-list"></i>Pokemon List
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/search">
-              <i className="fa-solid fa-magnifying-glass"></i>Search
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="/data"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -43,6 +38,11 @@ function GlobalHeader() {
                 <i className="fa-solid fa-database"></i>Pokemon Data
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                  <a className="dropdown-item" href="/data/items">
+                    Items
+                  </a>
+                </li>
                 <li>
                   <a className="dropdown-item" href="/data/types">
                     Types

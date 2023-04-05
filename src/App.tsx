@@ -10,10 +10,13 @@ import { Navigate, NavigateProps, Route, Routes } from 'react-router-dom';
 import PokemonInfomation from './features/infomation/pkm/PokemonInfomation';
 import Battle from './features/battle/Battle';
 import Guessing from './features/guessingGame/Guessing';
+
 import Search from './features/search/Search';
-import GameData from './features/data/Data';
-import PokemonList from './features/search/List';
 import Error from './features/error/Error';
+import PokemonTypesDataPage from './features/data/PokemonTypesDataPage';
+import PokemonAbilitiesDataPage from './features/data/PokemonAbilitiesDataPage';
+import PokemonMovesDataPage from './features/data/PokemonMovesDataPage';
+import PokemonItemsDataPage from './features/data/PokemonItemsDataPage';
 
 function App() {
   let homeNavigate:NavigateProps = {
@@ -25,9 +28,14 @@ function App() {
       <Route path="/" element={<Navigate {...homeNavigate}> </Navigate>}></Route>
       <Route path="/home" element={<Core></Core>}></Route>
 
-      <Route path="/list" element={<PokemonList></PokemonList>}></Route>
-      <Route path="/search" element={<Search></Search>}></Route>
-      <Route path="/data" element={<GameData></GameData>}></Route>
+      <Route path="/list" element={<Search></Search>}></Route>
+
+      <Route path="/data/items" element={<PokemonItemsDataPage></PokemonItemsDataPage>}></Route>
+      <Route path="/data/types" element={<PokemonTypesDataPage></PokemonTypesDataPage>}></Route>
+      <Route path="/data/moves" element={<PokemonMovesDataPage></PokemonMovesDataPage>}></Route>
+      <Route path="/data/abilities" element={<PokemonAbilitiesDataPage></PokemonAbilitiesDataPage>}></Route>
+
+
       <Route path="/guess" element={<Guessing></Guessing>}></Route>
       <Route path="/battle" element={<Battle></Battle>}></Route>
 

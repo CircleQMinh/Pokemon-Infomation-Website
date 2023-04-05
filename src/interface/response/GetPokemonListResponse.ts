@@ -1,3 +1,4 @@
+import BasicModel from "../model/BasicModel";
 import Pokemon from "../model/Pokemon";
 
 export default interface GetPokemonListResponse{
@@ -6,3 +7,4 @@ export default interface GetPokemonListResponse{
     previous:string,
     results:Pokemon[]
 }
+

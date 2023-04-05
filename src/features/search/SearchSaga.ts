@@ -5,6 +5,7 @@ import Pokemon from "../../interface/model/Pokemon";
 import BaseQuery from "../../interface/query/BaseQuery";
 import { BaseResponse } from "../../interface/response/BaseResponse";
 import GetPokemonListResponse from "../../interface/response/GetPokemonListResponse";
+import GetPokemonSearchListResponse from "../../interface/response/GetPokemonSearchListResponse";
 import {  searchActions, SearchState } from "./SearchSlice";
 
 export default function* SearchSaga() {
@@ -19,6 +20,10 @@ export default function* SearchSaga() {
   yield takeLatest(
     searchActions.startUpdateInfo.toString(),
     handle_startUpdateInfo
+  );
+  yield takeLatest(
+    searchActions.getPokemonSearchList.toString(),
+    handle_getPokemonSearchList
   );
 }
 
@@ -37,7 +42,6 @@ export function* handle_getPokemonList(action: PayloadAction<BaseQuery>) {
 }
 
 export function* handle_getPokemonListSuccess(){
-  console.log("handle_getPokemonListSuccess")
   yield put(searchActions.startUpdateInfo());
 }
 
@@ -62,5 +66,19 @@ function* handle_startUpdateInfo(){
     stateData = yield select((state) => state.search);
     pokemonsToUpdateInfo = stateData.pokemons.filter((x) => x.id == null);
     // yield put(SearchActions.startUpdateInfo());
+  }
+}
+
+
+function* handle_getPokemonSearchList(){
+  try {
+    const response: GetPokemonSearchListResponse = yield call(
+      pokeApi.getPokemonSearchList
+    );
+
+    yield put(searchActions.getPokemonSearchListSuccess(response));
+  } catch (error) {
+    console.log("Failed to fetch list", error);
+    yield put(searchActions.getPokemonSearchListFailed());
   }
 }
