@@ -4,7 +4,7 @@ import useWindowDimensions, {
   useAppSelector,
   useAppDispatch,
 } from "../../app/hooks";
-import InfoCardList from "../../components/infoCardList/infoCardList";
+import InfoCardList from "../../components/search/infoCardList";
 import { searchState, searchActions } from "./SearchSlice";
 import './Search.css';
 import SimpleSearchBarWithSuggetion from "../../components/reuseable/SimpleSearchBarWithSuggetion";
@@ -49,7 +49,7 @@ function Search() {
   }, [state.pokemons]);
   return (
     <Fragment>
-        <SimpleSearchBarWithSuggetion data={state.pokemonSearchList} suggestionCount={5} onSearchResultClick={(e:string)=>{
+        <SimpleSearchBarWithSuggetion placeholder="What pokemon you looking for?" data={state.pokemonSearchList} suggestionCount={5} onSearchResultClick={(e:string)=>{
           window.open(`${window.location.protocol}//${window.location.host}/pokedex/${e}`, "_blank")
         }}></SimpleSearchBarWithSuggetion>
         <InfoCardList Pokemons={state.pokemons}></InfoCardList>

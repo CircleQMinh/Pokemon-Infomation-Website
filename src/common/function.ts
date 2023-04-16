@@ -106,8 +106,12 @@ export function tranformStringDash(string:string) {
   string = string.replaceAll("-"," ")
   return string
 }
+export function revertTranformStringDash(string:string) {
+  string = string.replaceAll(" ","-")
+  return string
+}
 
-export const calculatePagesCount = (pageSize: number, totalCount: number) => {
-  // we suppose that if we have 0 items we want 1 empty page
-  return totalCount < pageSize ? 1 : Math.ceil(totalCount / pageSize);
-};
+
+export function getItemImage(s:string){
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${s}.png`
+}

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
 import SetPokemonInfo from '../../interface/form/SetPokemonInfo';
 import { EvolutionChain, EvolutionInfo } from '../../interface/model/EvolutionChain';
+import PMKItemCategory from '../../interface/model/PKMItemCategory';
 import Pokemon from '../../interface/model/Pokemon';
 import Species from '../../interface/model/Species';
 import BaseQuery from '../../interface/query/BaseQuery';
@@ -12,10 +13,15 @@ import GetPokemonListResponse from '../../interface/response/GetPokemonListRespo
 
 export interface InfomationState {
     value: number,
+
     pokemon : Pokemon|undefined,
     species:Species|undefined,
-
     evolutionInfo: EvolutionInfo|undefined,
+
+
+    itemsInCategory:PMKItemCategory|undefined
+
+
     status: 'idle' | 'loading' | 'failed',
     query: BaseQuery,
     updateInfo : 'done' | 'inprogress'
@@ -27,6 +33,7 @@ export interface InfomationState {
     pokemon : undefined,
     species: undefined,
     evolutionInfo : undefined,
+    itemsInCategory: undefined,
     query: {
         offset:0,
         limit:20
@@ -62,6 +69,19 @@ export interface InfomationState {
       getPokemonEvolutionInfoFailed(state) {
         state.status = 'failed'
       },
+
+      getItemCategoryInfo: (state, action: PayloadAction<string>) => {
+        state.itemsInCategory = undefined
+        state.status = 'loading'
+      },
+      getItemCategoryInfoSuccess(state, action: PayloadAction<PMKItemCategory>) {
+        state.itemsInCategory = action.payload;
+      },
+      getItemCategoryInfoFailed(state) {
+        state.status = 'failed'
+      },
+
+
 
       setStatusDone(state) {
         state.status = 'idle'

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import InfoCardList from "../../components/infoCardList/infoCardList";
+import InfoCardList from "../../components/search/infoCardList";
 import { coreState, coreActions } from "./coreSlice";
 import './core.css';
 function Core() {

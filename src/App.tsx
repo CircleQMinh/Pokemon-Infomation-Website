@@ -17,6 +17,7 @@ import PokemonTypesDataPage from './features/data/PokemonTypesDataPage';
 import PokemonAbilitiesDataPage from './features/data/PokemonAbilitiesDataPage';
 import PokemonMovesDataPage from './features/data/PokemonMovesDataPage';
 import PokemonItemsDataPage from './features/data/PokemonItemsDataPage';
+import ItemCategoryPage from './features/infomation/item/ItemCategoryPage';
 
 function App() {
   let homeNavigate:NavigateProps = {
@@ -40,6 +41,7 @@ function App() {
       <Route path="/battle" element={<Battle></Battle>}></Route>
 
       <Route path="/pokedex/:id" element={<PokemonInfomation />}></Route>
+      <Route path="/item/category/:id" element={<ItemCategoryPage />}></Route>
 
       <Route path="*" element={<Error />}></Route>
     </Routes>

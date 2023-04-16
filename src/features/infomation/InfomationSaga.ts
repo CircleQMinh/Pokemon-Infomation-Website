@@ -13,6 +13,7 @@ import {
 import pokeApi from "../../api/pokeAPI";
 import { GetIdFromUrl } from "../../common/function";
 import { EvolutionInfo } from "../../interface/model/EvolutionChain";
+import PMKItemCategory from "../../interface/model/PKMItemCategory";
 import Pokemon from "../../interface/model/Pokemon";
 import Species from "../../interface/model/Species";
 import BaseQuery from "../../interface/query/BaseQuery";
@@ -40,9 +41,24 @@ export default function* infomationSaga() {
   );
 
   yield takeLatest(
-    infomationActions.getPokemonSpeciesInfoSuccess.toString(),
+    infomationActions.getPokemonEvolutionInfoSuccess.toString(),
     handle_setDoneLoading
   );
+
+  yield takeLatest(
+    infomationActions.getItemCategoryInfo.toString(),
+    handle_getItemCategoryInfo
+  );
+}
+function* handle_getItemCategoryInfo(action: PayloadAction<string>) {
+  try {
+    const response: PMKItemCategory = yield call(pokeApi.getItemCategory, action.payload);
+
+    yield put(infomationActions.getItemCategoryInfoSuccess(response));
+  } catch (error) {
+    console.log("Failed to fetch pkm  info", error);
+    yield put(infomationActions.getItemCategoryInfoFailed());
+  }
 }
 
 function* handle_getPokemon(action: PayloadAction<string>) {

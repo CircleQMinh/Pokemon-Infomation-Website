@@ -17,7 +17,11 @@ const pokeApi = {
     const url = `/pokemon/${name}/`;
     return axiosClient.get(url);
   },
-  
+  getItemCategory(name: string): Promise<Pokemon> {
+    // console.log(name)
+    const url = `/item-category/${name}/`;
+    return axiosClient.get(url);
+  },
   getSpecies(name: string): Promise<Species> {
     // console.log(name)
     const url = `/pokemon-species/${name}/`;
@@ -33,6 +37,11 @@ const pokeApi = {
   getPokemonSearchList(): Promise<GetPokemonSearchListResponse> {
     // console.log(name)
     const url = `/pokemon-species/?offset=0&limit=2000`;
+    return axiosClient.get(url);
+  },
+  getPokemonItemList(): Promise<GetPokemonSearchListResponse> {
+    // console.log(name)
+    const url = `/item/?offset=0&limit=2500`;
     return axiosClient.get(url);
   },
 
