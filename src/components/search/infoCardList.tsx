@@ -1,7 +1,7 @@
 import React from "react";
 import "../../common/css/infoCard.css";
 import Pokemon from "../../interface/model/Pokemon";
-import InfoCard from "../infoCard/infoCard";
+import InfoCard from "./infoCard";
 type InfoCardListProps = {
   Pokemons: Pokemon[];
 };

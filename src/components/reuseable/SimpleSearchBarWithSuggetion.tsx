@@ -6,6 +6,7 @@ import { capitalizeFirstLetter } from "../../common/function";
 type SimpleSearchBarWithSuggetionProps = {
   data: string[];
   suggestionCount: number;
+  placeholder:string;
   onSearchResultClick: Function
 };
 function SimpleSearchBarWithSuggetion(
@@ -42,7 +43,7 @@ function SimpleSearchBarWithSuggetion(
               <input
                 type="text"
                 className="searchTerm"
-                placeholder="What pokemon you looking for?"
+                placeholder={props.placeholder}
                 onChange={handleSearchInput}
                 value={searchKeyword}
               />

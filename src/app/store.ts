@@ -3,6 +3,7 @@ import counterReducer from '../features/counter/counterSlice';
 import coreReducer from '../features/core/coreSlice';
 import searchReducer from '../features/search/SearchSlice';
 import infomationReducer from '../features/infomation/InfomationSlice';
+import dataReducer from '../features/data/DataSlice';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
 const sagaMiddleware = createSagaMiddleware();
@@ -12,7 +13,8 @@ export const store = configureStore({
     counter: counterReducer,
     core: coreReducer,
     search: searchReducer,
-    infomation:infomationReducer
+    infomation:infomationReducer,
+    data:dataReducer
   },
   middleware: (getDefaultMiddleware) =>
   getDefaultMiddleware().concat(sagaMiddleware),

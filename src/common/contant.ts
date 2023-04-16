@@ -217,3 +217,4 @@ export const damage_array =[
 [1, 1/2, 1, 1, 1, 1, 2, 1/2, 1, 1, 1, 1, 1, 1, 2, 2, 1/2, 1]
 ]
 
+export const defaultImgNotFound = "/static/img/notfound.png"
